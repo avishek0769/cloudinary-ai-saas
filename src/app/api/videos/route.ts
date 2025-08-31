@@ -55,6 +55,7 @@ export async function POST (req: NextRequest) {
 
         const result = await new Promise<CloudinaryResult>((resolve, reject) => {
             const upload_stream = cloudinary.uploader.upload_stream({
+                folder: "cld-ai-saas-video",
                 resource_type: "video",
                 transformation: [
                     { quality: "auto", fetch_format: "mp4" }
